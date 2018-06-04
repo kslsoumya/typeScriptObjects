@@ -17,7 +17,8 @@ constructor(
     public IsProfilePrivate:boolean,
     private currentCity?:string,
     public placesCheckedIn?:string[],
-    private socialLink?:string
+    private socialLink?:string,
+    private profilePic?:string
 ) {
 
 this.workPlace=workPlace
@@ -54,6 +55,10 @@ setemailId=(email:string)=>{
     console.log('setting a new value to emailID ..........')
     this.emailId=email
 }
+setProfilePic=(url:string)=>{
+    console.log('setting the profile picture ..............')
+    this.profilePic = url
+}
 
 // ----------------Getters-----------
 getworkPlace=()=>{
@@ -84,15 +89,17 @@ getPrivacy=()=>{
         return "No"
     }
 }
+getProfilePic=()=>{
+    console.log('getProfilePic() is to display the profile picture.')
+    return this.profilePic
+}
 
 // ---method in the class----
 
 getOnlineFriends=()=>{
     console.log('getOnlineFriends()  is to find the friends in online')
 }
-getProfilePicture=()=>{
-    console.log('getProfilePicture() is to display the profile picture.')
-}
+
 getHobbies=()=>{
     console.log('getHobbies() is to display the hobbies of that person.')
 }
@@ -140,10 +147,9 @@ profile_soumya.setemailId("ksl@gmail.com")
 console.log("The new email Id is : "+profile_soumya.getemailId())
 console.log('--------------------------------')
 
+profile_soumya.setProfilePic("user.png")
+document.getElementById('pic').innerHTML= '<img src= '+profile_soumya.getProfilePic()+'>'
+
+
 profile_soumya.getOnlineFriends()
-
-
-
-
-
 

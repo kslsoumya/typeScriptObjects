@@ -1,6 +1,6 @@
 var about_Profile = /** @class */ (function () {
     // --------constructor---------------
-    function about_Profile(workPlace, college, highSchool, friendsList, homeTown, mobilePhone, emailId, address, relationshipStatus, birthDate, IsProfilePrivate, currentCity, placesCheckedIn, socialLink) {
+    function about_Profile(workPlace, college, highSchool, friendsList, homeTown, mobilePhone, emailId, address, relationshipStatus, birthDate, IsProfilePrivate, currentCity, placesCheckedIn, socialLink, profilePic) {
         var _this = this;
         this.workPlace = workPlace;
         this.college = college;
@@ -16,6 +16,7 @@ var about_Profile = /** @class */ (function () {
         this.currentCity = currentCity;
         this.placesCheckedIn = placesCheckedIn;
         this.socialLink = socialLink;
+        this.profilePic = profilePic;
         // -----------setters---------
         this.setCurrentCity = function () {
             console.log("setting the value of 'current place' based on the value of workplace");
@@ -35,6 +36,10 @@ var about_Profile = /** @class */ (function () {
             console.log('---------------------------------------');
             console.log('setting a new value to emailID ..........');
             _this.emailId = email;
+        };
+        this.setProfilePic = function (url) {
+            console.log('setting the profile picture ..............');
+            _this.profilePic = url;
         };
         // ----------------Getters-----------
         this.getworkPlace = function () {
@@ -66,12 +71,13 @@ var about_Profile = /** @class */ (function () {
                 return "No";
             }
         };
+        this.getProfilePic = function () {
+            console.log('getProfilePic() is to display the profile picture.');
+            return _this.profilePic;
+        };
         // ---method in the class----
         this.getOnlineFriends = function () {
             console.log('getOnlineFriends()  is to find the friends in online');
-        };
-        this.getProfilePicture = function () {
-            console.log('getProfilePicture() is to display the profile picture.');
         };
         this.getHobbies = function () {
             console.log('getHobbies() is to display the hobbies of that person.');
@@ -115,4 +121,6 @@ for (var i = 0; i < profile_soumya.placesCheckedIn.length; i++) {
 profile_soumya.setemailId("ksl@gmail.com");
 console.log("The new email Id is : " + profile_soumya.getemailId());
 console.log('--------------------------------');
+profile_soumya.setProfilePic("user.png");
+document.getElementById('pic').innerHTML = '<img src= ' + profile_soumya.getProfilePic() + '>';
 profile_soumya.getOnlineFriends();
