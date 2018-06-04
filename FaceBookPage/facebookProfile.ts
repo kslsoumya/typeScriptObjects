@@ -90,6 +90,12 @@ getPrivacy=()=>{
 getOnlineFriends=()=>{
     console.log('getOnlineFriends()  is to find the friends in online')
 }
+getProfilePicture=()=>{
+    console.log('getProfilePicture() is to display the profile picture.')
+}
+getHobbies=()=>{
+    console.log('getHobbies() is to display the hobbies of that person.')
+}
 
 }
 

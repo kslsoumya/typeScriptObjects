@@ -70,6 +70,12 @@ var about_Profile = /** @class */ (function () {
         this.getOnlineFriends = function () {
             console.log('getOnlineFriends()  is to find the friends in online');
         };
+        this.getProfilePicture = function () {
+            console.log('getProfilePicture() is to display the profile picture.');
+        };
+        this.getHobbies = function () {
+            console.log('getHobbies() is to display the hobbies of that person.');
+        };
         this.workPlace = workPlace;
         this.college = college;
         this.highSchool = highSchool;
